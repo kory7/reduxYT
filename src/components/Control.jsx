@@ -5,14 +5,17 @@ const propTypes = {
   onSubtract: PropTypes.func,
   onRandomizeColor: PropTypes.func
 };
+
 function createWarning(funcName){
   return ()=>console.warn(funcName + " is not defined");
-}
+};
+
 const defaultProps = {
   onPlus: ()=>createWarning('onPlus'),
   onSubtract: ()=>createWarning('onSubtract'),
   onRandomizeColoer: ()=>createWarning('onRandomizeColor')
 };
+
 class Control extends Component {
     constructor(props) {
         super(props);
@@ -27,6 +30,7 @@ class Control extends Component {
         );
     }
 }
+
 Control.propTypes = propTypes;
 Control.defaultProps = defaultProps;
 export default Control;
